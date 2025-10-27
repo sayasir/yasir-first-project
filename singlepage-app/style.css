@@ -1,0 +1,748 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.header{
+    height: 8%;
+    width: 100%;
+    background-color: rgb(29, 28, 28);
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.header a{
+    padding: 7px 17px ;
+    background-color: whitesmoke;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.menu{
+    height: 30px;
+    width: 30px;
+    background-color: aliceblue;
+    display: grid;
+    padding-top: 5px;
+    padding-left: 5px;
+    /* position: absolute;
+    top: 20px;
+    left: 20px; */
+    border: 3px solid rgb(160, 111, 20);
+    
+}
+.name{
+    display: none;
+    color: rgb(0, 85, 255);
+}
+@media (min-width: 1024px) {
+ .name{
+    display: block;
+ }
+}
+.menu:active{
+    outline: 1px solid white;
+    box-shadow:0px 15px 30px rgb(0,0, 0.1);
+}
+.menu div{
+    height: 2px;
+    width: 75%;
+    background-color: rgb(14, 14, 13);
+}
+
+.main{
+    height: 84%;
+    width: 100%;
+    background-color: rgb(19, 128, 201);
+}
+.last{
+    height: 8%;
+    width: 100%;
+    background-color: rgb(29, 28, 28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ 
+    position: fixed;
+       bottom: 0;
+    left: 0;
+}
+.last h2{
+    color: aquamarine;
+}
+.last a{
+    font-size: 15px ;
+    color: rgb(37, 112, 234);
+}
+.last a:active{
+    color: orange;
+}
+.last label{
+    color: gray;
+  
+}
+.last label span{
+    color: black;
+    padding-left: 5px;
+}
+.menu-box{
+    height: 190px;
+    width: 220px;
+    background-color: rgb(96, 191, 205);
+    position: fixed;
+    top: 70px;
+    z-index: 100;
+    border-radius: 10px;
+    border: 2px solid rgb(231, 226, 226);
+     box-shadow:0px 15px 30px rgb(47, 46, 46);
+     transform: translateX(-220px);
+     transition: 0.2s ease-in-out;
+}
+.open-menu{
+     transform: translateX(0px);
+}
+.menu-box ul{
+    height: 100%;
+    width: 100%;
+    border: 1px solid transparent;
+    list-style: none;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: column;
+ 
+}
+.menu-box ul li{
+    height: 38px;
+    width: 85%;
+    background-color: white;
+    
+    border-radius: 8px;
+}
+.menu-box ul li a{
+ position: relative;
+    border: 1px solid rgb(226, 216, 216);
+    height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   text-decoration: none;
+   padding-left: 15px;
+  font-size: 16.5px;
+  color: black;
+  border-radius: 8px;
+   
+}
+.home{
+      height: 100%;
+    width: 100%;
+    background-color: azure;
+display: none;
+transition: 0.2s ease-in-out; 
+}
+.home2{
+height: 10%;
+width: 100%;
+background-color:rgb(190, 227, 227) ;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+.home2 h2{
+
+}
+.home1{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.home-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  border: 1px solid transparent;
+  position: relative;
+  
+ 
+}
+
+.home-card:hover {
+  transform: scale(1.05);
+}
+
+.home-card h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.home-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.home-card li {
+  margin: 8px 0;
+  color: #555;
+}
+
+.home-card button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.home-card button:hover {
+  background-color: #0056b3;
+}
+
+.extra-info {
+  display: none;
+  margin-top: 10px;
+  color: #333;
+}
+
+.calculator{
+    height: 100%;
+    width: 100%;
+    background-color: azure;
+display: none;
+transition: 0.2s ease-in-out;
+    
+    
+}
+.container1{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-calc2{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-calc2 h1{
+    color: burlywood;
+}
+.Todolist{
+      height: 100%;
+    width: 100%;
+    /* background-color: azure; */
+    background-color: azure;
+     display: none;
+  
+}
+.containerfortodo1{
+    height: 7%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     color: burlywood;
+}
+.containerfortodo1 h1{
+    margin-top: 10px;
+}
+.containerfortodo{
+    height: 93%;
+    width: 100%;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.to-docontainer{
+     height: 600px;
+     width: 430px;
+     /* background-color: rgb(7, 96, 184); */
+     padding: 10px ;
+     border-radius: 10px;
+     /* box-shadow: 0px 15px 30px rgb(0, 0, 0.1); */
+     background-color: #1e3a8a; /* deep blue for professionalism */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  
+
+}
+.input-container{
+    height: 60px;
+    width: 100%;
+    /* background-color: rgb(37, 36, 36); */
+    background-color: #ffffff; 
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.input-container input{
+    padding: 8px 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    /* background-color: rgb(200, 246, 246); */
+      background-color: #fefefe;
+      border: 1px solid gray;
+}
+.input-container input:focus{
+    /* border: 1px solid rgb(212, 130, 15); */
+    border: 1px solid #f59e0b;
+    border-radius: 5px;
+}
+.input-container button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    /* background-color: rgb(1, 209, 1); */
+    /* color: black; */
+       background-color: #10b981; /* professional green */
+    color: white;
+}
+.input-container button:hover{
+       /* background-color: rgb(4, 202, 4); */
+       background-color: #059669;
+}
+.input-container button:active{
+        /* background-color: rgb(10, 255, 10);
+        border: 1px solid gray; */
+           background-color: #047857;
+    border: 1px solid #065f46;
+}
+.newtask-container{
+    height: 510px;
+    width: 100%;
+    /* background-color: rgb(37, 36, 36); */
+    background-color: #e5e7eb;
+  
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.newtask{
+    /* background-color:rgb(219, 232, 232); */
+      background-color: #ffffff; /* white task box */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    height:50px;
+    width: 95%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+.newtask input{
+      padding: 5px 10px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+    
+}
+.newtask input:focus{
+    /* border: 1px solid rgb(199, 68, 3); */
+    border: 1px solid #f59e0b;
+}
+.edittask{
+    padding: 6px 10px;
+    /* background-color: #007BFF; */
+      background-color: #3b82f6; /* professional blue */
+    color: white;
+    border-radius: 3px;
+    border: none;
+}
+.edittask:hover {
+    background-color: #2563eb;
+}
+
+.deltask{
+    padding: 6px 10px;
+    /* background-color: #cf0d0d; */
+      background-color: #ef4444; /* professional red */
+    color: white;
+    border-radius: 3px;
+    border: none;
+}
+.deltask:hover {
+    background-color: #b91c1c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dinogame{
+     height: 100%;
+    width: 100%;
+    background-color: azure;
+     display: none;
+}
+.full-dion{
+  height: 100%;
+  width: 100%;
+  border: 1px solid transparent;
+}
+.game-container1{
+  height: 8%;
+  width: 100%;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   color: burlywood;
+}
+.game-container2{
+    height: 92%;
+  width: 100%;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.game-area{
+  height: 300px;
+  width: 500px;
+  background-color: white;
+  border: 2px solid black;
+  background-color: rgb(175, 226, 246);
+  position: relative;
+}
+@keyframes dinoaction{
+  0%{
+      top: 238px;
+  }
+ 30%{
+  top: 180px;
+ }
+  50%{
+    top: 140px;
+  }
+  70%{
+    top: 140px;
+  }
+  90%{
+    top: 180px;
+  }
+
+  100%{
+    top: 238px;
+  }
+}
+@keyframes cactusaction{
+  0%{
+    left: 520px;
+  }
+  100%{
+    left: -80px;
+  }
+}
+.dinojump{
+  animation: dinoaction 0.5s linear;
+}
+.dino{
+  height: 65px;
+  width: 20px;
+  background-color: black;
+  position: relative;
+  top:238px ;
+  left: 40px;
+  
+}
+.cactusmove{
+animation: cactusaction 1s infinite;
+}
+.cactus1{
+height: 40px;
+width: 20px;
+background-color: green;
+position: absolute;
+top: 260px;
+left: 510px;
+
+
+}
+.cactus2{
+height: 50px;
+width: 20px;
+background-color:yellow;
+position:absolute;
+top: 250px;
+left: 510px;
+}
+
+.cactus3{
+height: 40px;
+width: 20px;
+background-color: brown;
+position: absolute;
+top: 260px;
+left: 510px;
+}
+
+
+
+.game-button{
+  height: 60px;
+  width: 500px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+    background-color: brown;
+}
+.jump-btn{
+  padding: 10px 15px;
+  border: none;
+  background-color: yellowgreen;
+  color: black;
+  font-size: 15px;
+  border-radius: 3px;
+   transition: 0.2s ease ease-in-out;
+}
+.start-btn{
+  padding: 10px 15px;
+  border: none;
+  background-color: yellowgreen;
+  color: black;
+  font-size: 15px;
+  border-radius: 3px;
+  transition: 0.2s ease ease-in-out;
+}
+.jump-btn:active{
+  border: 1px solid green;
+  background-color: rgb(1, 154, 1);
+}
+.start-btn:active{
+  border: 1px solid green;
+  background-color: rgb(1, 154, 1);
+}
+
+.score{
+  position: absolute;
+  font-size: 50px;
+  left: 165px;
+  top: 50px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Feedback{
+        height: 100%;
+    width: 100%;
+    background-color: azure;
+     display: none;
+}
+.Feedback  h1{
+    color: brown;
+    text-align: center;
+}
+.pageshow{
+   display: block;
+
+}
+
+
+
+
+
+.feedback-box {
+  margin-top: 20px;
+  background: #f3f4f6;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.feedback-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-box button {
+  width: 48%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#addBtn {
+  background: #3b82f6;
+}
+
+#clearBtn {
+  background: #ef4444;
+}
+
+.btn-box button:hover {
+  opacity: 0.8;
+}
+
+#displayDiv {
+  margin-top: 15px;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.feedback-item {
+  background: #e0f2fe;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.calculator1{
+    height: 450px;
+    width: 350px;
+    background-color: gray;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+.screen-container{
+   height: 20%;
+   width: 100%;
+   border: 1px solid transparent;
+   
+   /* flex-grow: 1; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+.screen-container input{
+   
+   width: 75%;
+   
+    text-align: end;
+    font-size: 25px;
+    padding: 4px 5px;
+    border-radius: 5px;
+    border: none;
+
+
+
+}
+.screen-container input::placeholder{
+    color: green;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.button-container{
+     height: 80%;
+   width: 100%;
+   border: 1px solid transparent;
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+
+     gap: 25px; /* space between buttons */
+  padding:25px 10px;
+   /* flex-grow: 4; */
+ 
+}
+.button-container .btn{
+    width: 60px;
+    height: 50px;
+    border: none;
+
+}
+.button-container .btn:active{
+    border: 1px solid white;
+}
+
+
+
+
+
+
+/* dinogame start */
+
+

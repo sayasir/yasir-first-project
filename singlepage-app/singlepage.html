@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singlepage-application</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav class="header">
+        <div class="menu" onclick="openmenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="name" >
+            <h1 >Yasir Multi Tool App</h1>
+        </div>
+        
+        <a href="#calculator">Calculator</a>
+        <a href="#Todolist">To-Do-List</a>
+        <a href="#dinogame">dinogame</a>
+    </nav>
+   
+    <div class="main">
+         <div class="menu-box">
+        <ul>
+             <li>
+              <a href="#home">home</a>
+             </li>
+            <li>
+                <a href="#calculator">Calculator</a>
+
+            </li>
+            <li>
+
+                <a href="#Todolist">To-Do-List</a>
+
+            </li>
+            <li>
+
+                <a href="#dinogame">dinogame</a>
+            </li>
+        </ul>
+    </div>
+    <section class="home section">
+      <div class="home2">
+        <h2>Yasir-mltitool-app</h2>
+        <p>helo friend,click on feedback link go to feed back page </p>
+        <p>And give your feedback how was our multi tool app? </p>
+      </div>
+      <div class="home1">
+        <div class="home-card">
+    <h1>Hello, I'm Yasir!</h1>
+    <ul>
+      <li><strong>Hobbies:</strong> Coding, Reading, Gaming</li>
+      <li><strong>Skills:</strong> HTML, CSS, JavaScript, Python</li>
+      <li><strong>Other:</strong> Always learning new things!</li>
+    </ul>
+    <button id="moreBtn">Show More</button>
+    <p id="extraInfo" class="extra-info">I love building small projects and experimenting with web designs.</p>
+  </div>
+      </div>
+      
+    </section>
+      <section class="calculator section">
+        <div class="container-calc2">
+          <h1>calculator-tool</h1>
+        </div>
+        
+        <div class="container1">
+           
+        <div class="calculator1">
+        <div class="screen-container">
+            <input type="text" placeholder="0" readonly >
+        </div>
+        <div class="button-container">
+            <button class="btn" onclick="handleclick('1')">1</button>
+             <button class="btn" onclick="handleclick('2')">2</button>
+              <button class="btn" onclick="handleclick('3')">3</button>
+               <button class="btn" onclick="handleclick('+')">+</button>
+                <button class="btn" onclick="handleclick('4')">4</button>
+             <button class="btn" onclick="handleclick('5')">5</button>
+              <button class="btn" onclick="handleclick('6')">6</button>
+              <button class="btn" onclick="handleclick('-')">-</button>
+               <button class="btn" onclick="handleclick('4')">7</button>
+             <button class="btn" onclick="handleclick('5')">8</button>
+              <button class="btn" onclick="handleclick('6')">9</button>
+              <button class="btn" onclick="handleclick('*')">*</button>
+               <button class="btn" onclick="handleclick('4')">0</button>
+             <button class="btn" onclick="cleared()">Cl</button>
+              <button class="btn" onclick="del()">Del</button>
+              <button class="btn" onclick="calculate()">=</button>
+        </div>
+     </div>
+        </div>
+       
+      </section>
+      <section class="Todolist section">
+        <div class="containerfortodo1">
+          <h1>to do list</h1>
+        </div>
+        
+        <div class="containerfortodo">
+ <div class="to-docontainer">
+             <div class="input-container">
+              <input type="text">
+              <button class="addlist" onclick="addlist()">Add</button>
+             </div>
+             <div class="newtask-container">
+              <!-- <div class="newtask">
+                <input type="text" class="taskinput">
+                <button class="edittask">Edit</button>
+                <button class="deltask">Delete</button>
+              </div> -->
+             </div>
+        </div>
+        </div>
+       
+        
+
+      </section>
+      <section class="dinogame section">
+       <div class="full-dion">
+        <div class="game-container1">
+          <h1>dino game</h1>
+        </div>
+        <div class="game-container2">
+          <div class="game-area">
+            <div class="score">
+            <span>score: <p class="num" style="display: inline;">0</p></span>
+            </div>
+           
+            <div class="dino">
+              <img src="./images/dino1.png" style="height: 100%; width: 100%;box-shadow: 0px 5px 30px rgb(0,0,0.3); border-radius: 5px;">
+            </div>
+            <div class="cactus1">
+              <img src="./images/cactus.png" style="height: 100%; width: 100%;">
+            </div>
+            <div class="cactus2">
+               <img src="./images/cactus.png" style="height: 100%; width: 100%;">
+            </div>
+            <div class="cactus3">
+               <img src="./images/cactus.png" style="height: 100%; width: 100%;">
+            </div>
+            <div class="additio" style="position: absolute; left: 505px; top: 250px; border: 1px solid transparent; height: 60px; width: 60px; background-color: azure;"></div>
+            
+
+          </div>
+          <div class="game-button">
+            <button class="jump-btn" onclick="jump()">jump</button>
+            <button class="start-btn" onclick="start()">start</button>
+          </div>
+        </div>
+       </div>
+
+
+      </section>
+      <section class="Feedback section">
+           <h1>Give Feedback</h1>
+      <div class="feedback-box">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <input type="text" id="descInput" placeholder="Enter your feedback">
+        <div class="btn-box">
+          <button id="addBtn">Add</button>
+          <button id="clearBtn">Clear</button>
+        </div>
+        <div id="displayDiv"></div>
+      </div>
+      </section>
+      
+
+    </div>
+    <footer class="last">
+        <h2>how is it ? <a href="#Feedback">Feedback</a></h2>
+             <label for="">contact:<span>yasirsa05@gmail.com</span></label>
+             
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg,rgb(76, 0, 255),rgb(153, 0, 255),rgb(183, 0, 255));
+    display: flex;
+  align-items: center;
+    justify-content: center;
+}
+.to-do-list-box{
+    width: 35%;
+    height:auto;
+    min-width: 400px;
+    border: 1px solid transparent;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(14, 14, 14);
+    box-shadow: 0px 5px 30px rgba(0,0,0, 0.5);
+    margin-top: 30px;
+ 
+}
+.input-box{
+    height: 40px;
+    width: 100%;
+    background-color:rgb(231, 134, 17);
+    border-radius: 14px;
+    border: 1px solid transparent;
+    padding:25px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 5px 30px rgba(168, 159, 159, 0.383);
+    outline: 5px solid rgba(228, 225, 225, 0.102);
+    
+}
+.input-box input{
+    height:35px ;
+    width: 80%;
+    border-radius: 10px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+
+
+}
+input:focus{
+    outline: 2px solid rgb(244, 9, 244);
+}
+.input-box button{
+    height: 30px;
+
+    padding: 1px 10px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.2s;
+    color: white;
+    background-color: green;
+    color: black;
+}
+.input-box button:hover{
+    background-color:  rgb(8, 98, 8);
+    color:white;
+}
+.input-box button:active{
+    background-color: green;
+    color: white;
+}
+.new-task{
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 15px;
+   
+}
+.task{
+    padding:10px 20px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+}
+.textinscreen{
+    color: white;
+
+     font-size: 12px;
+}
+.completed{
+    text-decoration: line-through;
+}
+.delete{
+    padding: 8px 8px;
+    background-color: greenyellow;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+    color: red;
+    font-size: 11px;
+}
+.delete:active{
+    background-color: red;
+    color: greenyellow;
+}
+.edit{
+    background-color: yellow;
+    color: green;
+    border: none;
+    padding:8px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}

@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg,green,yellow,orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator{
+    height: 70%;
+    width: 30%;
+    min-width: 400px;
+    background-color: rgba(255, 0, 0, 0.456);
+    border-radius: 20px;
+    box-shadow: 0px 15px 30px rgba(0,0, 0,0.8);
+    border: 10px solid rgb(255, 166, 0);
+    outline: 10px solid rgba(255, 0, 0, 0.054);
+    display: flex;
+    flex-direction: column;
+         box-shadow: inset 0px 4px 8px rgba(250, 1, 1, 0.2),
+              inset 0px -4px 8px rgba(0, 0, 0, 0.7);
+   
+}
+.display{
+    height:20%;
+    width: 100%;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.display input{
+    height:60%;
+   width: 80%;
+    text-align: right;
+    outline: none;
+border: none;
+border-radius: 5px;
+background-color: rgba(205, 174, 50, 0.183);
+padding-right: 10px;
+font-size: 25px;
+color: black;
+          box-shadow: inset 0px 4px 8px rgba(250, 1, 1, 0.225),
+              inset 0px -4px 8px rgba(0, 0, 0, 0.7);
+                outline: 15px solid rgba(255, 0, 162, 0.054);
+ transition: 0.2s;
+   
+}
+.display input:focus{
+      outline: 5px solid rgba(255, 0, 0, 0.109);
+      box-shadow: 0px 15px 30px rgba(249, 1, 1, 0.3);
+      
+}
+.display input::placeholder {
+  color: rgb(40, 4, 4);        /* your color */
+  opacity: 1;        /* make sure it's fully visible */
+}
+
+.buttons{
+    height: 80%;
+    width: 100%;
+    border: 1px solid transparent;
+     display: grid;                          /* enable grid */
+    grid-template-columns: repeat(4, 1fr);  /* 3 equal columns */
+    gap: 10px;   
+   padding:  30px 0px;
+   padding-left: 35px;
+}
+.buttons button{
+   height: 50px;
+    width: 50px; 
+    border: none;
+    background-color: black;
+    color: wheat;
+    transition: 0.2s;
+    border-radius: 5px;
+     box-shadow: inset 0px 4px 8px rgba(199, 185, 185, 0.2),
+              inset 0px -4px 8px rgba(0, 0, 0, 0.7);
+               outline: 10px solid rgba(255, 0, 162, 0.054);
+         
+
+
+}
+.buttons button:hover{
+
+  border: 4px solid orange;
+    outline: 5px solid rgba(255, 0, 0, 0.109);
+      box-shadow: 0px 15px 30px rgba(249, 1, 1, 0.3);
+}
+.buttons button:focus{
+      border: 5px solid rgba(159, 155, 155, 0.487);
+    outline: 5px solid rgba(255, 0, 0, 0.109);
+      box-shadow: 0px 15px 30px rgba(249, 1, 1, 0.3);
+}
+.buttons button:active {
+  border: 5px solid rgb(255, 230, 3);
+  outline: 5px solid rgba(255, 0, 0, 0.109);
+  box-shadow: 0px 15px 30px rgba(249, 1, 1, 0.3);
+}

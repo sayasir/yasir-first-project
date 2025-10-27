@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: bisque;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.calculator{
+    height: 70%;
+    width: 400px;
+    border: 1px solid  transparent;
+    border-radius: 20px;
+background: linear-gradient(135deg, #00f260, #0575e6);
+
+
+
+
+  
+     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    margin: auto;
+
+}
+.container1{
+    height: 30%;
+    width: 100%;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     box-shadow: inset 4px 4px 12px rgb(224, 222, 222);
+     border-radius: 18px;
+}
+.container1 input{
+    height:35%;
+    width: 90%;
+    border: none;
+    outline: none;
+    font-size: 35px;
+    color: rgb(167, 164, 164);
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: end;
+padding-right: 10px;
+box-shadow: inset -5px -5px 12px rgb(128, 127, 127);
+}
+.container2{
+    height: 70%;
+    width: 100%;
+    border: 1px solid transparent;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 5px;
+    box-shadow: inset 4px 4px 12px rgb(224, 222, 222);
+}
+.container2 button{
+border-radius:5px ;
+box-shadow: inset 5px 5px 12px rgb(142, 140, 140);
+height: 90%;
+width: 95%;
+border: 1px solid rgb(35, 35, 35);
+font-size: 20px;
+color: rgb(6, 6, 6);
+}
+.container2 button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 5px 5px 12px rgb(205, 203, 203);
+}

@@ -1,0 +1,154 @@
+html,
+body {
+
+  height: 100%;
+  width: 100%;
+
+
+
+  margin: 0;
+  padding: 0;
+
+  position: fixed;
+  overflow: hidden;
+
+}
+
+#game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 5px solid black;
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+
+}
+
+#game1 {
+  height: 301px;
+  width: 600px;
+  border: 1px solid black;
+  margin: auto;
+  position: absolute;
+  background-color: rgba(199, 196, 196, 0.218);
+  border-bottom: 4px solid black;
+  box-shadow: 9px 8px 30px 4px;
+
+
+
+
+}
+
+#dino {
+  position: relative;
+  background-image: url(images/dino1.png);
+  height: 50px;
+  width: 50px;
+  background-size: 50px 50px;
+  background-color: transparent;
+  top: 251px;
+  left: 60px;
+
+
+
+
+
+
+}
+
+.jump {
+  animation: jump .5s linear;
+
+}
+.rotate-jump{
+  animation: rotate .5s linear; 
+}
+
+#cactus {
+  position: relative;
+  background-image: url(images/cactus.png);
+  height: 50px;
+  width: 50px;
+  background-size: 50px 50px;
+  left: 550px;
+  top: 200px;
+
+
+
+}
+
+.cactus-moving {
+  animation: cactus 1.5s linear infinite;
+}
+#scoreboard{
+  position: relative;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+
+
+}
+
+@keyframes jump {
+  0% {
+    top: 251px;
+  
+  }
+
+  30% {
+    top: 110px;
+  }
+
+  50% {
+    top: 100px;
+  }
+
+  80% {
+    top: 110px;
+  }
+
+  100% {
+    top: 251px;
+     
+  }
+}
+@keyframes rotate {
+  0% {
+    top: 251px;
+    transform: rotate(0deg);
+  }
+
+  30% {
+    top: 110px;
+  }
+
+  50% {
+    top: 100px;
+  }
+
+  80% {
+    top: 110px;
+  }
+
+  100% {
+    top: 251px;
+     transform: rotate(360deg);
+  }
+}
+
+@keyframes cactus {
+  0% {
+    left: 550;
+  }
+
+  100% {
+    left: 0px;
+  }
+}

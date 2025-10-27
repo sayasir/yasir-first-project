@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamicslider</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    padding:30px;
+    overflow-y: hidden;
+}
+.container1{
+    height:300px;
+    width:1500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    background-color: rgb(85, 3, 3);
+    align-self: center;
+
+}
+.container2{
+    height:300px;
+    width:1500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    background-color: rgb(85, 3, 3);
+    align-self: center;
+    
+}
+.container3{
+    height:300px;
+    width:1500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    background-color: rgb(85, 3, 3);
+    align-self: center;
+    
+}
+.box{
+    background-color: red;
+    border: 1px solid gray;
+    height: 100%;
+    width: 190px ;
+}
+.card{
+    height: 100%;
+    width: 100%;
+ 
+    color: white;
+    position: relative;
+ 
+}
+.card h1{
+    background-color: blue;
+    margin-bottom: 25px;
+}
+.card p{
+    color:black;
+    margin-left: 20px;
+}
+
+.btn{
+    padding:10px  20px;
+    border-radius: 5px;
+    background-color: wheat;
+    border: 1px solid rgb(19, 227, 19);
+    position: absolute;
+
+    left: 15px;
+    margin-top: 10px;
+   
+}
+.btn:active{
+    background-color: gray;
+}
+.images {
+    height: 100px;
+    width: 100px;
+    margin-top: 55px;
+    margin-left: 50px;
+    border-radius: 5px;
+    outline: 5px solid rgba(187, 255, 0, 0.239);
+
+    opacity: 0;
+    transform: translateY(-20px); /* start slightly up */
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.images.show {
+    opacity: 1;
+    transform: translateY(0); /* move to normal */
+    visibility: visible;
+}
+.images.hide {
+    opacity: 0;
+    transform: translateY(-20px); /* move to normal */
+    visibility: hidden;
+}
+
+   </style>
+</head>
+<body>
+
+<div class="container1">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+<div class="container2">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+<div class="container3">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+
+    <script>
+     const boxes=document.querySelectorAll('.box')
+//  function click(){
+
+//    boxes.forEach(box=>{
+//     box.style.backgroundColor="white"
+//    })
+//  }
+//  click()
+const data=[
+    {title:"card1",p:"this is my 1 card",button:"click1",img: "https://picsum.photos/100?random=1"},
+    {title:"card2",p:"this is my 2 card",button:"click2",img: "https://picsum.photos/100?random=2"},
+    {title:"card3",p:"this is my 3 card",button:"click3",img: "https://picsum.photos/100?random=3"},
+    {title:"card4",p:"this is my 4 card",button:"click4",img: "https://picsum.photos/100?random=4"},
+    {title:"card5",p:"this is my 5 card",button:"click5",img: "https://picsum.photos/100?random=5"},
+    {title:"card6",p:"this is my 6 card",button:"click6",img: "https://picsum.photos/100?random=6"},
+    {title:"card7",p:"this is my 7 card",button:"click7",img: "https://picsum.photos/100?random=7"},
+    {title:"card1",p:"this is my 1 card",button:"click1",img: "https://picsum.photos/100?random=8"},
+    {title:"card2",p:"this is my 2 card",button:"click2",img: "https://picsum.photos/100?random=10"},
+    {title:"card3",p:"this is my 3 card",button:"click3",img: "https://picsum.photos/100?random=11"},
+    {title:"card4",p:"this is my 4 card",button:"click4",img: "https://picsum.photos/100?random=12"},
+    {title:"card5",p:"this is my 5 card",button:"click5",img: "https://picsum.photos/100?random=13"},
+    {title:"card6",p:"this is my 6 card",button:"click6",img: "https://picsum.photos/100?random=14"},
+    {title:"card7",p:"this is my 7 card",button:"click7",img: "https://picsum.photos/100?random=15"},
+       {title:"card1",p:"this is my 1 card",button:"click1",img: "https://picsum.photos/100?random=8"},
+    {title:"card2",p:"this is my 2 card",button:"click2",img: "https://picsum.photos/100?random=10"},
+    {title:"card3",p:"this is my 3 card",button:"click3",img: "https://picsum.photos/100?random=11"},
+    {title:"card4",p:"this is my 4 card",button:"click4",img: "https://picsum.photos/100?random=12"},
+    {title:"card5",p:"this is my 5 card",button:"click5",img: "https://picsum.photos/100?random=13"},
+    {title:"card6",p:"this is my 6 card",button:"click6",img: "https://picsum.photos/100?random=14"},
+    {title:"card7",p:"this is my 7 card",button:"click7",img: "https://picsum.photos/100?random=15"},
+]
+ const colors = ["green", "yellow", "red", "purple", "orange", "teal", "brown","tomato", "royalblue", "seagreen", "purple", "orange", "teal", "brown", "yellow", "red", "purple", "orange", "teal", "brown","tomato"];
+data.forEach((item,index )=> {
+    const card=document.createElement('div');
+    card.classList.add('card');
+    card.style.backgroundColor=colors[index]
+    const h1=document.createElement('h1')
+    h1.textContent=item.title;
+    const para=document.createElement('p');
+    para.textContent=item.p;
+    const btn=document.createElement('button')
+    btn.textContent=item.button;
+    btn.classList.add('btn');
+
+    const img=document.createElement('img')
+    img.src=item.img;
+    img.classList.add('images');
+  btn.addEventListener("click", () => {
+  img.classList.toggle("show");
+// if(img.style.display==="none"||img.style.display===""){
+//     img.classList.add("show");
+// }
+// else if(img.classList.contains("show")){
+//     img.classList.remove("show");
+//     img.classList.add("hide");
+// }
+});
+
+
+    card.appendChild(h1);
+    card.appendChild(para);
+     card.appendChild(btn);
+      card.appendChild(img);
+    boxes[index].appendChild(card);
+
+});
+
+
+    </script>
+</body>
+</html>

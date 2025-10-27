@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vh;
+    overflow: hidden;
+    display: flex;
+ justify-content: center;
+   
+
+}
+.extra{
+height: 100%;
+position: relative;
+width: 100%;
+ background-color: black;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.analog-clock {
+   
+    position: relative;
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    border: 10px ridge red;
+    background-color: wheat;
+
+}
+
+.analog-clock::before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border: 1px solid black;
+
+
+}
+
+.analog-clock::after {
+    content: "Ajanta";
+    position: absolute;
+    font-size: large;
+    color: red;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+
+
+}
+
+.number {
+    --rotate: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: black;
+    transform: rotate(var(--rotate));
+    font-size: 20px;
+
+}
+
+.number-1 {
+    --rotate: 30deg;
+}
+
+.number-2 {
+    --rotate: 60deg;
+}
+
+.number-3 {
+    --rotate: 90deg;
+}
+
+.number-4 {
+    --rotate: 120deg;
+}
+
+.number-5 {
+    --rotate: 150deg;
+}
+
+.number-6 {
+    --rotate: 180deg;
+}
+
+.number-7 {
+    --rotate: 210deg;
+}
+
+.number-8 {
+    --rotate: 240deg;
+}
+
+.number-9 {
+    --rotate: 270deg;
+}
+
+.number-10 {
+    --rotate: 300deg;
+}
+
+.number-11 {
+    --rotate: 330deg;
+}
+.needle{
+    --rotation:0;
+    
+    position: absolute;
+   
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+    z-index: 8;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    
+
+}
+.sec{
+height: 30%;
+ width: 3px;
+   
+ background-color: red;
+}
+.min{
+height: 40%;
+ width: 5px;
+  
+      background-color: black;
+}
+.hrs{
+  height:20% ;
+ width: 5px;
+ 
+      background-color: black;
+}
+
+.one{
+    transform: rotate(-30deg);
+}
+.two{
+    transform: rotate(300deg); 
+}
+.three{
+ transform: rotate(270deg); 
+}
+.four{
+   transform: rotate(-120deg); 
+}
+.five{
+      transform: rotate(200deg); 
+}
+.six{
+     transform: rotate(180deg);    
+}
+.seven{
+   transform: rotate(155deg);  
+}
+.eight{
+    transform: rotate(120deg);
+}
+.nine{
+     transform: rotate(-270deg); 
+}
+.ten{
+     transform: rotate(-300deg); 
+}
+.eleven{
+      transform: rotate(30deg);
+}
+
+

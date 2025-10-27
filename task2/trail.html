@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8" />
+<title>TV Deals Cards - Different Data</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .card-container {
+    background: white;
+    padding: 15px 20px;
+    width: 360px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .card-container h2 {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .item {
+    width: 48%;
+    text-align: center;
+  }
+  .item img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  .item p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #333;
+  }
+  .see-all {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #0066c0;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .see-all:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="card-container" id="tvDealsCard1"></div>
+<div class="card-container" id="tvDealsCard2"></div>
+<div class="card-container" id="tvDealsCard3"></div>
+
+<script>
+  const tvDealsData1 = {
+    title: "Get your desired TV screen size | Starting ₹6,999",
+    items: [
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Budget TVs | Save extra with No Cost EMI" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "4K TVs | Up to 24 months No Cost EMI" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Big Screens | Free installation" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Ultra Premium TVs | Up to 50% off" }
+    ],
+    seeAllText: "See all", 
+    seeAllLink: "#"
+  };
+
+  const tvDealsData2 = {
+    title: "Explore Home Appliances | Great Deals Today",
+    items: [
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Kitchen Appliances | Upto 40% off" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Laundry Essentials | Save Big" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Vacuum Cleaners | Best Offers" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Air Coolers | Up to 30% off" }
+    ],
+    seeAllText: "See all Home Appliances",
+    seeAllLink: "#home-appliances"
+  };
+
+  const tvDealsData3 = {
+    title: "Special Gadgets Sale | Grab Yours Now!",
+    items: [
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Smart Watches | Trending Now" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Wireless Earbuds | Best Prices" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Portable Speakers | Quality Sound" },
+      { img: "https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1_Kitchen._SY232_CB804590709_.jpg", text: "Fitness Trackers | Limited Offer" }
+    ],
+    seeAllText: "See all Gadgets",
+    seeAllLink: "#gadgets"
+  };
+
+  function createCard(containerId, data) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = ""; // காலி செய்ய
+    
+    // Title
+    const titleElem = document.createElement('h2');
+    titleElem.textContent = data.title;
+    container.appendChild(titleElem);
+
+    // Items container
+    const itemsDiv = document.createElement('div');
+    itemsDiv.classList.add('items');
+
+    data.items.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.classList.add('item');
+
+      const img = document.createElement('img');
+      img.src = item.img;
+      img.alt = item.text;
+
+      const p = document.createElement('p');
+      p.textContent = item.text;
+
+      itemDiv.appendChild(img);
+      itemDiv.appendChild(p);
+      itemsDiv.appendChild(itemDiv);
+    });
+
+    container.appendChild(itemsDiv);
+
+    // See all link
+    const seeAll = document.createElement('a');
+    seeAll.href = data.seeAllLink;
+    seeAll.classList.add('see-all');
+    seeAll.textContent = data.seeAllText;
+    container.appendChild(seeAll);
+  }
+
+  createCard('tvDealsCard1', tvDealsData1);
+  createCard('tvDealsCard2', tvDealsData2);
+  createCard('tvDealsCard3', tvDealsData3);
+</script>
+
+</body>
+</html>

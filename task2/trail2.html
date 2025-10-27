@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Containers</title>
+    
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .full-container {
+   height: 441px;
+           width: 100%;
+           display: flex;
+           justify-content: space-evenly;
+
+        }
+
+        .container {
+            height: 100%;
+            width: 23.5%;
+            background-color: #fff;
+ 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+        }
+
+        .container h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .container p {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="full-container">
+        </div>
+
+    <script>
+        // Array to hold the data for each container.
+        const containerData = [
+            {
+                title: "Automotive essentials | Up to 60% off",
+                imageSrc: "https://via.placeholder.com/280x200?text=Car+Accessories",
+                description: "Cleaning accessories, Tyres, and more."
+            },
+            {
+                title: "Under ₹499 | Deals on home improvement essentials",
+                imageSrc: "https://via.placeholder.com/280x200?text=Home+Tools",
+                description: "Under ₹199 | Cleaning supplies, Home tools, Wallpapers."
+            },
+            {
+                title: "Get your desired TV screen size | Starting ₹6,999",
+                imageSrc: "https://via.placeholder.com/280x200?text=4K+TVs",
+                description: "Budget TVs, Big Screen, Ultra Premium TVs."
+            },
+            {
+                title: "Starting ₹199 | Amazon Brands & more",
+                imageSrc: "https://via.placeholder.com/280x200?text=Bed+Sheets",
+                description: "Starting ₹199 | Bedsheets, Minimum 40% off | Drones."
+            }
+        ];
+
+        // 1. Get the main container where we will add our new divs.
+        const fullContainer = document.querySelector('.full-container');
+
+        // 2. Loop through the containerData array.
+        for (let i = 0; i < containerData.length; i++) {
+            // 3. Get the data for the current container.
+            const data = containerData[i];
+
+            // 4. Create a new div element for the container.
+            const newContainer = document.createElement('div');
+            newContainer.classList.add('container');
+
+            // 5. Create the inner HTML for the container using the data.
+            newContainer.innerHTML = `
+                <h2>${data.title}</h2>
+                <p>${data.description}</p>
+                <img src="${data.imageSrc}" alt="${data.title}">
+            `;
+
+            // 6. Append the new container to the main full-container.
+            fullContainer.appendChild(newContainer);
+        }
+    </script>
+
+</body>
+</html>

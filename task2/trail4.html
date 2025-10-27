@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easy Slider with 8 Inner Boxes</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+    body{
+      height: 100vh;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+      background:linear-gradient(135deg,Brown,yellow,rgb(255, 128, 0));
+    }
+  .slider-container {
+    width: 1300px;
+    overflow: hidden;
+ 
+    position: relative;
+    border: 2px ridge #000;
+    border-radius: 25px;
+  }
+
+  .slider-track {
+    display: flex;
+    border: 1px solid red;
+    height: auto;
+  }
+
+  .slider-box {
+    width: 1300px;
+    height: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    border: 5px solid white;
+  }
+
+  .inner-box {
+    width: 150px;
+    height: 150px;
+    background: #1e0a0a;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 50px;
+  }
+
+  .box1 { background: linear-gradient(135deg,red,yellow,rgb(255, 128, 0)); }
+  .box2 { background: linear-gradient(135deg,green,yellow,rgb(255, 128, 0));}
+  .box3 { background: linear-gradient(135deg,brown,yellow,rgb(255, 128, 0)); }
+
+  .btn-left, .btn-right {
+    position: absolute;
+    top: 15%;
+    transform: translateY(-50%);
+    background:rgb(255, 128, 0);
+    border: 1px solid #000;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+  }
+  .btn-left { left: 10px; }
+  .btn-right { right: 10px; }
+</style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div class="slider-track" id="sliderTrack">
+    <div class="slider-box box1">
+      <div class="inner-box">1</div>
+      <div class="inner-box">2</div>
+      <div class="inner-box">3</div>
+      <div class="inner-box">4</div>
+      <div class="inner-box">5</div>
+      <div class="inner-box">6</div>
+      <div class="inner-box">7</div>
+      <div class="inner-box">8</div>
+    </div>
+    <div class="slider-box box2">
+      <div class="inner-box">1</div>
+      <div class="inner-box">2</div>
+      <div class="inner-box">3</div>
+      <div class="inner-box">4</div>
+      <div class="inner-box">5</div>
+      <div class="inner-box">6</div>
+      <div class="inner-box">7</div>
+      <div class="inner-box">8</div>
+    </div>
+    <div class="slider-box box3">
+      <div class="inner-box">1</div>
+      <div class="inner-box">2</div>
+      <div class="inner-box">3</div>
+      <div class="inner-box">4</div>
+      <div class="inner-box">5</div>
+      <div class="inner-box">6</div>
+      <div class="inner-box">7</div>
+      <div class="inner-box">8</div>
+    </div>
+  </div>
+
+  <button class="btn-left" onclick="slideLeft()">Left</button>
+  <button class="btn-right" onclick="slideRight()">Right</button>
+</div>
+
+<script>
+const sliderTrack = document.getElementById('sliderTrack');
+const boxes = document.querySelectorAll('.slider-box');
+const boxWidth = 1300;
+let index = 0;
+let direction = 1;
+let timeouts = [];
+const delay = 200; // 0.2s per inner box
+
+function showInnerBoxes(box, direction) {
+  const innerBoxes = Array.from(box.querySelectorAll('.inner-box'));
+  
+  // Clear previous timeouts
+  timeouts.forEach(t => clearTimeout(t));
+  timeouts = [];
+  
+  // Hide all first
+  innerBoxes.forEach(ib => ib.style.opacity = 0);
+
+  // Decide order based on direction
+  const order = direction === 1 ? innerBoxes : innerBoxes.slice().reverse();
+
+  // Show one by one
+  order.forEach((ib, i) => {
+    timeouts.push(setTimeout(() => {
+      ib.style.opacity = 1;
+    }, (i + 1) * delay));
+  });
+}
+
+function updateSlider() {
+  sliderTrack.style.transform = `translateX(-${index * boxWidth}px)`;
+  showInnerBoxes(boxes[index], direction);
+}
+
+function slideRight() {
+  direction = 1;
+  index = (index + 1) % boxes.length;
+  updateSlider();
+}
+
+function slideLeft() {
+  direction = -1;
+  index = (index - 1 + boxes.length) % boxes.length;
+  updateSlider();
+}
+
+// Initialize first box
+updateSlider();
+</script>
+
+</body>
+</html>

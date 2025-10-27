@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Switcher - Array Colors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .display-container {
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .active {
+      display:block;
+      display: flex;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .button-container button:hover {
+      filter: brightness(0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Display Container -->
+  <div class="display-container">
+    <div class="box box1 active" >Box 1</div>
+    <div class="box box2" >Box 2</div>
+    <div class="box box3" >Box 3</div>
+    <div class="box box4" >Box 4</div>
+  </div>
+
+  <!-- Button Container -->
+  <div class="button-container">
+    <button onclick="showBox1()" id="btn1">Button 1</button>
+    <button onclick="showBox2()"id="btn2">Button 2</button>
+    <button onclick="showBox3()" id="btn3">Button 3</button>
+    <button onclick="showBox4()" id="btn4">Button 4</button>
+  </div>
+
+  <script>
+    const box1 = document.querySelector('.box1');
+    const box2 = document.querySelector('.box2');
+    const box3 = document.querySelector('.box3');
+    const box4 = document.querySelector('.box4');
+
+
+    const btns = document.querySelectorAll('.button-container button');
+
+    // 🎨 Array with 4 colors
+    const colors = ["tomato", "steelblue", "seagreen", "darkorange"];
+
+[box1, box2, box3, box4].forEach((box, i) => {
+  box.style.background = colors[i];
+});
+
+ btns.forEach((btn, i) => {
+  btn.style.background = colors[i];
+});
+
+
+    // ✅ Your original four functions (unchanged)
+    function showBox1() {
+      box1.classList.add('active');
+      box2.classList.remove('active');
+      box3.classList.remove('active');
+      box4.classList.remove('active');
+    }
+
+    function showBox2() {
+      box1.classList.remove('active');
+      box2.classList.add('active');
+      box3.classList.remove('active');
+      box4.classList.remove('active');
+    }
+
+    function showBox3() {
+      box1.classList.remove('active');
+      box2.classList.remove('active');
+      box3.classList.add('active');
+      box4.classList.remove('active');
+    }
+
+    function showBox4() {
+      box1.classList.remove('active');
+      box2.classList.remove('active');
+      box3.classList.remove('active');
+      box4.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
